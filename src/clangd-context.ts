@@ -122,6 +122,14 @@ export class ClangdContext implements vscode.Disposable {
             // notice until the behavior was in several releases, so we need
             // to override it on the client.
             item.commitCharacters = [];
+            if (!item.command && item.kind &&
+                (item.kind == vscode.CompletionItemKind.Method ||
+                 item.kind == vscode.CompletionItemKind.Function)) {
+              item.command = {
+                title: 'Signature Help',
+                command: 'editor.action.triggerParameterHints'
+              };
+            }
             return item;
           })
           return new vscode.CompletionList(items, /*isIncomplete=*/ true);

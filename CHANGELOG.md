@@ -1,5 +1,9 @@
 # Change Log
 
+## Version 0.1.24: November 12, 2022
+
+* Parameter hint now correctly shows after accepting autocomplete prompt.
+
 ## Version 0.1.23: October 23, 2022
 
 * Update vscode-language client to 8.0.2, with apparent bugfixes
